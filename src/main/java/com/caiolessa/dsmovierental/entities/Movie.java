@@ -3,6 +3,7 @@ package com.caiolessa.dsmovierental.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -14,6 +15,7 @@ public class Movie {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
+    @Column(columnDefinition = "TEXT")
     private String synopsis;
     private Integer releaseYear;
     private Double rentPrice;
@@ -23,5 +25,5 @@ public class Movie {
     private Genre genre;
 
     @OneToMany(mappedBy = "id.movie")
-    private List<RentalItem> rentals;
+    private List<RentalItem> rentals = new ArrayList<>();
 }

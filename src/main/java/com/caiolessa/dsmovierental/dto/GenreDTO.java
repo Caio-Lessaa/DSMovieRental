@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @NoArgsConstructor
@@ -14,13 +15,10 @@ import java.util.List;
 public class GenreDTO {
     private Long id;
     private String name;
-    private List<MovieDTO> movies;
+    private List<MovieDTO> movies = new ArrayList<>();
 
     public GenreDTO(Genre entity) {
         id = entity.getId();
         name = entity.getName();
-        for(Movie movie : entity.getMovies()) {
-            movies.add(new MovieDTO(movie));
-        }
     }
 }

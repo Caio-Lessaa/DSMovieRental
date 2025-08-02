@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @NoArgsConstructor
@@ -20,13 +21,13 @@ public class MovieDTO {
     private Double rentPrice;
     private String imgUrl;
     private GenreDTO genre;
-    private List<RentalItemDTO> rentals;
+    private List<RentalItemDTO> rentals = new ArrayList<>();
 
     public MovieDTO(Movie entity) {
         id = entity.getId();
         title = entity.getTitle();
         synopsis = entity.getSynopsis();
-        releaseYear = getReleaseYear();
+        releaseYear = entity.getReleaseYear();
         rentPrice = entity.getRentPrice();
         imgUrl = entity.getImgUrl();
         genre = new GenreDTO(entity.getGenre());
