@@ -37,4 +37,9 @@ public class MovieController {
     public MovieResponseDTO findById(@PathVariable Long id) {
         return movieService.findById(id);
     }
+
+    @PutMapping("/{id}")
+    public MovieRequestDTO update(@RequestBody MovieRequestDTO dto, @PathVariable Long id) {
+        return movieService.update(dto, id);
+    }
 }
