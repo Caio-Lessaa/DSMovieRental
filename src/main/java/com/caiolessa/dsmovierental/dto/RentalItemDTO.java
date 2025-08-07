@@ -8,13 +8,13 @@ public class RentalItemDTO {
     private Integer quantity;
     private Double price;
     private RentalDTO rental;
-    private MovieDTO movie;
+    private MovieRequestDTO movie;
 
     public RentalItemDTO(RentalItem entity) {
         id = entity.getId();
         quantity = entity.getQuantity();
         price = entity.getPrice();
         rental = new RentalDTO(entity.getRental());
-        movie = new MovieDTO(entity.getMovie());
+        movie = new MovieRequestDTO(entity.getMovie());
     }
 }

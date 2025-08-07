@@ -1,7 +1,6 @@
 package com.caiolessa.dsmovierental.dto;
 
 import com.caiolessa.dsmovierental.entities.Genre;
-import com.caiolessa.dsmovierental.entities.Movie;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,7 +14,7 @@ import java.util.List;
 public class GenreDTO {
     private Long id;
     private String name;
-    private List<MovieDTO> movies = new ArrayList<>();
+    private List<MovieRequestDTO> movies = new ArrayList<>();
 
     public GenreDTO(Genre entity) {
         id = entity.getId();
