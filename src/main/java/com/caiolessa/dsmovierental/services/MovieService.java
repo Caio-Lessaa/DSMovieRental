@@ -49,6 +49,15 @@ public class MovieService {
         return new MovieRequestDTO(entity);
     }
 
+    public void delete(Long id) {
+        if(movieRepository.existsById(id)) {
+            movieRepository.deleteById(id);
+        }else {
+            throw new ResourceNotFoundException("Filme não encontrado para o ID " + id);
+        }
+
+    }
+
     private void copyProperties(MovieRequestDTO dto, Movie entity) {
         entity.setTitle(dto.getTitle());
         entity.setSynopsis(dto.getSynopsis());

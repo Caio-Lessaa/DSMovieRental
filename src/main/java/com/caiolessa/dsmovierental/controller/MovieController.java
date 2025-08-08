@@ -42,4 +42,10 @@ public class MovieController {
     public MovieRequestDTO update(@RequestBody MovieRequestDTO dto, @PathVariable Long id) {
         return movieService.update(dto, id);
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
+        movieService.delete(id);
+        return ResponseEntity.noContent().build();
+    }
 }
