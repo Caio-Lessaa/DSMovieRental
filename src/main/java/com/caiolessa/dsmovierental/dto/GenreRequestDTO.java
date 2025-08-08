@@ -11,12 +11,11 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class GenreDTO {
+public class GenreRequestDTO {
     private Long id;
     private String name;
-    private List<MovieRequestDTO> movies = new ArrayList<>();
 
-    public GenreDTO(Genre entity) {
+    public GenreRequestDTO(Genre entity) {
         id = entity.getId();
         name = entity.getName();
     }

@@ -27,6 +27,7 @@ public class MovieService {
     public MovieRequestDTO insert(MovieRequestDTO dto) {
         Movie entity = new Movie();
         copyProperties(dto, entity);
+        entity = movieRepository.save(entity);
         return new MovieRequestDTO(entity);
     }
 

@@ -19,7 +19,7 @@ public class MovieRequestDTO {
     private Integer releaseYear;
     private Double rentPrice;
     private String imgUrl;
-    private GenreDTO genre;
+    private GenreRequestDTO genre;
     private List<RentalItemDTO> rentals = new ArrayList<>();
 
     public MovieRequestDTO(Movie entity) {
@@ -29,7 +29,7 @@ public class MovieRequestDTO {
         releaseYear = entity.getReleaseYear();
         rentPrice = entity.getRentPrice();
         imgUrl = entity.getImgUrl();
-        genre = new GenreDTO(entity.getGenre());
+        genre = new GenreRequestDTO(entity.getGenre());
         for(RentalItem rental : entity.getRentals()) {
             rentals.add(new RentalItemDTO(rental));
         }
